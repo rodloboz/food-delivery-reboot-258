@@ -6,6 +6,10 @@ class BaseView
   end
 
   def ask_for(attribute)
+    klass = self.class.to_s.chomp("sView").downcase
+    puts "What's the #{attribute} of the #{klass}?"
+    print "> "
+
     @input = gets.chomp
 
     @input if valid?(attribute)
